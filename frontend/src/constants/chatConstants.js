@@ -1,0 +1,2 @@
+export const GET_CHATS = 'GET_CHATS';
+export const AFTER_POST_MESSAGE = 'AFTER_POST_MESSAGE';
