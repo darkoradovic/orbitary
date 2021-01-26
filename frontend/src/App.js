@@ -21,6 +21,8 @@ import OrderListScreen from "./screens/OrderListScreen";
 import ChatScreen from "./screens/ChatScreen";
 import ServicesScreen from "./screens/ServicesScreen";
 import ContactUsScreen from "./screens/ContactUsScreen";
+import ForgotPasswordScreen from "./screens/ForgotPasswordScreen";
+import ResetPasswordScreen from "./screens/ResetPasswordScreen";
 
 
 const App = () => {
@@ -31,6 +33,8 @@ const App = () => {
         <Container>
           <Route exact path="/login" component={LoginScreen} />
           <Route exact path='/register' component={RegisterScreen} />
+          <Route exact path='/reset' component={ForgotPasswordScreen} />
+          <Route exact path='/reset/:token' component={ResetPasswordScreen} />
           <Route exact path='/profile' component={ProfileScreen} />
           <Route exact path='/shipping' component={ShippingScreen} />
           <Route exact path='/payment' component={PaymentScreen} />

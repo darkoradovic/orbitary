@@ -127,9 +127,9 @@ const ProfileScreen = (props) => {
         )}
       </Col>
       <Col md={9}>
-        <h2>Info About</h2>
         {userInfo && userInfo.isAdmin && (
           <div title="Admin" id="adminmenu">
+            <h2>Info About</h2>
             <LinkContainer to="/admin/userlist">
               <NavDropdown.Item>
                 Users <i className="far fa-user-circle"></i>

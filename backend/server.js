@@ -41,10 +41,6 @@ const connect = mongoose
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("API runing...");
-});
-
 app.use("/api/products", product);
 app.use("/api/users", user);
 app.use("/api/chat", chat);
@@ -158,6 +154,18 @@ io.on("connection", (socket) => {
     console.log("User left");
   });
 });
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../frontend/build')))
+
+  app.get('*', (req, res) =>
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
+  )
+} else {
+  app.get('/', (req, res) => {
+    res.send('API is running....')
+  })
+}
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {

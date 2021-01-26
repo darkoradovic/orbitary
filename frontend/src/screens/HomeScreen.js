@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Container } from "react-bootstrap";
-import { Row, Col } from "react-bootstrap";
 import Meta from "../components/Meta";
 import Button from "../components/Button";
 import ModalVideo from "react-modal-video";
+import i18n from '../i18n/i18n'
 
 const HomeScreen = (props) => {
   return (
     <div className="hero-container">
       <video src="/videos/video-2.mp4" autoPlay loop muted />
-      <h1>ADVENTURE AWAITS</h1>
-      <p>What are you waiting for?</p>
+      <h2 style={{fontSize:'4rem', color:'#fff'}}>{i18n.trs('homeHeader')}</h2>
+      <p>{i18n.trs('homeHeader2')}</p>
       <div className="hero-btns">
         <Link to="/services">
           <Button
@@ -19,7 +18,7 @@ const HomeScreen = (props) => {
             buttonStyle="btn--outline"
             buttonSize="btn--large"
           >
-            GET STARTED
+            {i18n.trs('homeBtn1')}
           </Button>
         </Link>
         <a target="_blank" href="https://www.youtube.com/watch?v=pj9cNnT7PJs">
@@ -28,7 +27,7 @@ const HomeScreen = (props) => {
             buttonStyle="btn--primary"
             buttonSize="btn--large"
           >
-            WATCH TRAILER <i className="far fa-play-circle" />
+            {i18n.trs('homeBtn2')} <i className="far fa-play-circle" />
           </Button>
         </a>
       </div>

@@ -21,6 +21,8 @@ const userSchema = mongoose.Schema(
       required: true,
       default: false,
     },
+    resetToken: String,
+    expireToken: Date,
     image: String,
   },
   {

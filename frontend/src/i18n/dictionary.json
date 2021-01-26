@@ -1,0 +1,14 @@
+{
+    "en": {
+        "homeHeader": "ADVENTURE AWAITS",
+        "homeHeader2": "What are you waiting for?",
+        "homeBtn1": "GET STARTED",
+        "homeBtn2": "WATCH TRAILER"
+    },
+    "de": {
+        "homeHeader": "DAS ABENTEURER WARTET",
+        "homeHeader2": "Worauf wartest du?",
+        "homeBtn1": "LOSLEGEN",
+        "homeBtn2": "TRAILER ANSEHEN"
+    }
+}

@@ -1,0 +1,127 @@
+.languageDropdown {
+    display: block;
+    
+    z-index: 20;
+    pointer-events: all;
+    color: #fff;
+  }
+  
+  .languageDropdownLight {
+    color: #ccc;
+  }
+  
+  /*.languageDropdownBtnLight ::before,*/
+  /*.languageDropdownBtn::before {*/
+    /*display: block;*/
+    /*content: '';*/
+    /*position: absolute;*/
+    /*right: 100%;*/
+    /*top: 50%;*/
+    /*height: 1px;*/
+    /*width: 80px;*/
+    /*background-color: #000;*/
+  /*}*/
+  
+  /*.languageDropdownBtnLight::before {*/
+    /*background-color: #fff;*/
+  /*}*/
+  
+  .changeLanguageWrap{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+  }
+
+  .langOptions{
+    display: flex;
+    justify-content: space-between;
+    color: #bebebe;
+    font-size: 25px;
+  }
+
+  .languageSelector{
+    display: flex;
+    justify-content: center;
+    width: 200px;
+  }
+
+  .activeLang{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lineBetween{
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+  }
+
+  .languageDropdownOption {
+    font-size: 25px;
+    text-decoration: none;
+    white-space: nowrap;
+    float: left;
+    cursor: pointer;
+  }
+  
+  
+  .languageDropdownSelect {
+    opacity: 1;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+  
+  .languageDropdown:hover .languageDropdownSelect {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  @media screen and (min-width: 421px) and (max-width: 767px) {
+    .changeLanguageWrap{
+      height: 50px;
+    }
+
+    .languageSelector{
+      width: 100%;
+    }
+
+    .languageSelector{
+      height: 100%;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .languageDropdownOption{
+      margin-top: -3px !important;
+    }
+
+  }
+
+  @media screen and (min-width: 374px) and (max-width: 411px){
+    
+    .languageDropdownOption{
+      margin-top: 15px !important;
+    }
+  }
+
+  @media screen and (min-width: 412px) and (max-width: 420px){
+    
+    .languageDropdownOption{
+      margin-top: 15px !important;
+    }
+  }
+
+  
+  @media only screen and (max-width: 800px) {
+    .languageDropdown {
+      top: 23px;
+      right: 140px;
+    }
+  }
+  

@@ -23,6 +23,9 @@ import {
   USER_UPDATE_REQUEST,
   USER_UPDATE_SUCCESS,
   USER_UPDATE_FAIL,
+  USER_FORGOT_PASSWORD_REQUEST,
+  USER_FORGOT_PASSWORD_SUCCESS,
+  USER_FORGOT_PASSWORD_FAIL,
 } from "../constants/userConstants";
 import axios from "axios";
 import { ORDER_LIST_MY_RESET } from "../constants/orderConstants";
@@ -284,3 +287,27 @@ export const updateUser = (user) => async (dispatch, getState) => {
     });
   }
 };
+
+export const forgotPasswordRequest = (email) => async (dispatch) => {
+  try {
+    dispatch({
+      type: USER_FORGOT_PASSWORD_REQUEST
+    })
+
+    const res = await axios.post('/api/users/forgotPassword', email)
+
+    dispatch({
+      type: USER_FORGOT_PASSWORD_SUCCESS,
+      payload: res.data
+    })
+
+  } catch (error) {
+    dispatch({
+      type: USER_FORGOT_PASSWORD_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  }
+}
