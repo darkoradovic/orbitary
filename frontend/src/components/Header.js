@@ -3,7 +3,6 @@ import { Link, Route } from "react-router-dom";
 import styled from "styled-components";
 import Button from "../components/Button";
 import LoadingBar from "react-top-loading-bar";
-import SearchBox from "./SearchBox";
 import { PoweroffOutlined } from "@ant-design/icons";
 
 import { withRouter } from "react-router-dom";
@@ -65,10 +64,6 @@ const Navbar = (props) => {
               </Link>
             </div>
             <div className="nav-right">
-              <Route
-                render={({ history }) => <SearchBox history={history} />}
-              />
-
               <div>
                 <div class="navigation" onClick={showNav}>
                   <div class="ham-btn">
@@ -141,9 +136,11 @@ const Navbar = (props) => {
             </div>
             <div className="nav-right">
               <div>
-                <Route
-                  render={({ history }) => <SearchBox history={history} />}
-                />
+              </div>
+              <div>
+              <Link to='/cart'>
+                  <i className='fas fa-shopping-cart'></i>
+                </Link>
               </div>
               <div>
                 <Link
@@ -156,6 +153,7 @@ const Navbar = (props) => {
                   </li>
                 </Link>
               </div>
+              
               <div>
                 <div class="navigation" onClick={showNav}>
                   <div class="ham-btn">

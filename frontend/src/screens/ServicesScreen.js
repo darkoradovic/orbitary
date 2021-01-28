@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link, Route } from "react-router-dom";
 import { Row, Col } from "react-bootstrap";
 import Product from "../components/Product";
 import { useDispatch, useSelector } from "react-redux";
@@ -6,6 +7,7 @@ import { listProducts } from "../actions/productActions";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
 import Paginate from "../components/Paginate";
+import SearchBox from '../components/SearchBox'
 
 const ServicesScreen = (props) => {
   const keyword = props.match.params.keyword;
@@ -27,6 +29,10 @@ const ServicesScreen = (props) => {
         <Message variant="danger">{error}</Message>
       ) : (
         <>
+        
+        <Route
+                  render={({ history }) => <SearchBox history={history} />}
+                />
           <Row>
             {products.map((product) => (
               <Col key={product._id} sm={12} md={6} lg={4} xl={3}>

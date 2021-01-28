@@ -43,7 +43,7 @@ const CartScreen = props => {
   };
 
   return (
-    <Row>
+    <Row style={{marginTop:'80px'}}>
       <Col md={8}>
         <h1>Shopping Cart</h1>
         {cartItems.length === 0 ? (
